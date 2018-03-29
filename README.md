@@ -3,7 +3,7 @@ Docker整合Galera Mysql
 
 rpm site   \
 download galera3
-http://releases.galeracluster.com/galera-3/centos/7/x86_64/galera-3-25.3.23-2.el7.x86_64.rpm
+http://releases.galeracluster.com/galera-3/centos/7/x86_64/galera-3-25.3.23-2.el7.x86_64.rpm \
 download mysql-wsrep-5.7.21-25.14
 http://releases.galeracluster.com/mysql-wsrep-5.7.21-25.14/centos/7/x86_64/
 
