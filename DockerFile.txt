@@ -1,0 +1,28 @@
+from centos
+#workdir /usr/galera/
+
+user root
+COPY my.cnf /etc/mysql/my.cnf
+#引入一个基础的centos 积习难镜像
+#copy libgalera_smm.so /usr/lib/galera/
+
+add *.rpm /
+RUN yum -y install gcc-c++ make git perl libaio libaio-devel lsof iproute iproute-devel rsync which perl-DBI perl-Data-Dumper vim-enhanced less openssl openssl-devel boost boost-devel
+
+RUN echo "$PWD"&&yes|yum localinstall -y /*.rpm&&rm -rf /var/log/mysql&&mkdir -p /var/logs/&&chmod 777 /var/logs/
+
+#COPY my.cnf /etc/mysql/my.cnf
+
+copy libgalera_smm.so /usr/lib/galera/
+
+copy mysql-first-time.sql /tmp
+
+add entrypoint.sh /
+
+RUN chmod +x  /entrypoint.sh
+
+expose 3306
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+
