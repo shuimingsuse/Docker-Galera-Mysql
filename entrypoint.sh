@@ -3,7 +3,6 @@
 # And changed for simplification of course :)
 # I.e. DATADIR is always /var/lib/mysql
 # We don't force the usage of MYSQL_ALLOW_EMPTY_PASSWORD 
-# erkan.yanar@linsenraum.de
 set -e
 set -x
 # Check ENV (MYSQL_) and stop if they are not known variables
